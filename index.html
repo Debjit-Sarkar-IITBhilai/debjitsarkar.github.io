@@ -116,7 +116,7 @@
 						<div class="inner">
 							<h2 class="major">Get in touch</h2>
 							<p>    </p>
-							<form method="post" action="#">
+							<form id="contact-form">
 								<div class="fields">
 									<div class="field">
 										<label for="name">Name</label>
@@ -162,6 +162,36 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+		<script>
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const url = "https://script.google.com/macros/s/AKfycbwJaPZU0WOodMy6i0aMG0bObCy-mEvT8bm19Ab4oUl1kX7c6v8u2SfLBWb8Tm1dSGcD/exec"; // replace with your actual URL
+  const data = {
+    name: document.querySelector('input[name="name"]').value,
+    email: document.querySelector('input[name="email"]').value,
+    message: document.querySelector('textarea[name="message"]').value
+  };
+
+  fetch(url, {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+  .then(response => {
+    alert("Message sent successfully!");
+    document.getElementById("contact-form").reset();
+  })
+  .catch(error => {
+    alert("There was an error sending your message.");
+    console.error(error);
+  });
+});
+</script>
+
 
 	</body>
 </html>
