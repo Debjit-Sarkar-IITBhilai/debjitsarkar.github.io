@@ -163,11 +163,11 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
-		<script>
+<script>
 document.getElementById("contact-form").addEventListener("submit", function(e) {
   e.preventDefault();
 
-  const url = "https://script.google.com/macros/s/AKfycbwJaPZU0WOodMy6i0aMG0bObCy-mEvT8bm19Ab4oUl1kX7c6v8u2SfLBWb8Tm1dSGcD/exec"; // replace with your actual URL
+  const url = "https://script.google.com/macros/s/AKfycbzKmpBGEqyB2gcnmLc6bNeIK9hQv6301Ta2mE8eJiZAiSo4W30kC29YZgO-LwIVv4Vy/exec"; // your actual URL
   const data = {
     name: document.querySelector('input[name="name"]').value,
     email: document.querySelector('input[name="email"]').value,
@@ -181,16 +181,18 @@ document.getElementById("contact-form").addEventListener("submit", function(e) {
       "Content-Type": "application/json"
     }
   })
-  .then(response => {
-    alert("Message sent successfully!");
+  .then(res => res.json())
+  .then(res => {
+    alert("Message sent!");
     document.getElementById("contact-form").reset();
   })
-  .catch(error => {
+  .catch(err => {
+    console.error("Error!", err.message);
     alert("There was an error sending your message.");
-    console.error(error);
   });
 });
 </script>
+
 
 
 	</body>
