@@ -167,7 +167,7 @@
 document.getElementById("contact-form").addEventListener("submit", function(e) {
   e.preventDefault();
 
-  const url = "https://script.google.com/macros/s/AKfycbyMvuO-2Fq6NIv8BblaXveObBmaxDICV79UxOxaFfQUb5vSO6OOwRXbXs6XZwknfwYZ/exec"; // your actual URL
+  const url = "https://script.google.com/macros/s/AKfycbyMvuO-2Fq6NIv8BblaXveObBmaxDICV79UxOxaFfQUb5vSO6OOwRXbXs6XZwknfwYZ/exec"; // replace with your actual URL
   const data = {
     name: document.querySelector('input[name="name"]').value,
     email: document.querySelector('input[name="email"]').value,
@@ -181,14 +181,13 @@ document.getElementById("contact-form").addEventListener("submit", function(e) {
       "Content-Type": "application/json"
     }
   })
-  .then(res => res.json())
-  .then(res => {
-    alert("Message sent!");
+  .then(response => {
+    alert("Message sent successfully!");
     document.getElementById("contact-form").reset();
   })
-  .catch(err => {
-    console.error("Error!", err.message);
+  .catch(error => {
     alert("There was an error sending your message.");
+    console.error(error);
   });
 });
 </script>
