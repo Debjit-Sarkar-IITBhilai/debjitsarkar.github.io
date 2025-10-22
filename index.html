@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Solid State by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 		<title>Debjit Sarkar - IIT BH</title>
@@ -11,183 +6,278 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* ===== Certificate Slideshow Styling ===== */
+			.slideshow-container {
+				position: relative;
+				max-width: 800px;
+				margin: auto;
+				border-radius: 10px;
+				overflow: hidden;
+				box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+			}
+
+			.mySlides {
+				display: none;
+				width: 100%;
+				animation: fade 1.5s ease-in-out;
+			}
+
+			@keyframes fade {
+				from {opacity: 0.4}
+				to {opacity: 1}
+			}
+
+			.prev, .next {
+				cursor: pointer;
+				position: absolute;
+				top: 50%;
+				width: auto;
+				padding: 16px;
+				margin-top: -22px;
+				color: white;
+				font-weight: bold;
+				font-size: 18px;
+				border-radius: 0 3px 3px 0;
+				user-select: none;
+				background-color: rgba(0,0,0,0.4);
+				transition: 0.3s;
+			}
+
+			.next {
+				right: 0;
+				border-radius: 3px 0 0 3px;
+			}
+
+			.prev:hover, .next:hover {
+				background-color: rgba(0,0,0,0.8);
+			}
+
+			.dot-container {
+				text-align: center;
+				padding: 10px;
+			}
+
+			.dot {
+				cursor: pointer;
+				height: 15px;
+				width: 15px;
+				margin: 0 3px;
+				background-color: #bbb;
+				border-radius: 50%;
+				display: inline-block;
+				transition: background-color 0.6s ease;
+			}
+
+			.active, .dot:hover {
+				background-color: #717171;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
 		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+		<div id="page-wrapper">
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="index.html">Debjit Sarkar</a></h1>
-					</header>
+			<!-- Header -->
+			<header id="header" class="alt">
+				<h1><a href="index.html">Debjit Sarkar</a></h1>
+			</header>
 
-				
+			<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<div class="logo"><img src="images/logo.png" alt="Logo" style="height: 250px; border-radius: 30px;" /></div>
+					<h2>Debjit Sarkar</h2>
+					<p>- Teaching Assistant at Indian Institute of Technology Bhilai<br>
+					- Researcher at Applied Sensing and Control for Intelligent India Lab<br>
+					- Former Quality Engineer at Johnson Controls-Hitachi Air Conditioning Limited<br>
+					- Former Business Development Associate at BYJU'S</p>
+				</div>
+			</section>
 
-				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<div class="logo"><img src="images/logo.png" alt="Logo" style="height: 250px; border-radius: 30px;" /></div>
-							<h2>Debjit Sarkar</h2>
-							<p>- Teaching Assistant at Indian Institute of Technology Bhilai<br>
-							- Researcher at Applied Sensing and Control for Intelligent India Lab<br>
-							- Former Quality Engineer at Johnson Controls-Hitachi Air Conditioning Limited<br>
-							- Former Business Development Associate at BYJU'S</p>
+			<!-- Wrapper -->
+			<section id="wrapper">
+
+				<!-- One -->
+				<section id="one" class="wrapper spotlight style1">
+					<div class="inner">
+						<a href="#" class="image"><img src="images/IIT_Bhilai.jpg" alt=""/></a>
+						<div class="content">
+							<h2 class="major">Post Graduation</h2>
+							<p>Pursuing Master of Technology in Control and Instrumentation, Department of Electrical Engineering at Indian Institute of Technology Bhilai from July 2024</p>
+							<a href="#" class="special">Learn more</a>
 						</div>
-					</section>
+					</div>
+				</section>
 
-				<!-- Wrapper -->
-					<section id="wrapper">
-
-						<!-- One -->
-							<section id="one" class="wrapper spotlight style1">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/IIT_Bhilai.jpg" alt=""/></a>
-									<div class="content">
-										<h2 class="major">Post Graduation</h2>
-										<p>Pursuing Master of Technology in Control and Instrumentation, Department of Electrical Engineering at Indian Institute of Technology Bhilai from july 2024</p>
-										<a href="#" class="special">Learn more</a>
-									</div>
-								</div>
-							</section>
-
-						<!-- Two -->
-							<section id="two" class="wrapper alt spotlight style2">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/MAKAUT.jpg" alt="" /></a>
-									<div class="content">
-										<h2 class="major">Graduation</h2>
-										<p>Completed Bachelor of Technology in Electrical Engineering from West Bengal university of Technology from 2018 to 20222</p>
-										<a href="#" class="special">Learn more</a>
-									</div>
-								</div>
-							</section>
-
-						<!-- Three -->
-							<section id="three" class="wrapper spotlight style3">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/NHS.jpg" alt="" /></a>
-									<div class="content">
-										<h2 class="major">Schooling</h2>
-										<p>Completed Secondary in the year of 2016 and Higher Secondary (Science) in the year of 2018 from Nabadwip Hindu School</p>
-										<a href="#" class="special">Learn more</a>
-									</div>
-								</div>
-							</section>
-
-						<!-- Four -->
-							<section id="four" class="wrapper alt style1">
-								<div class="inner">
-									<h2 class="major">Ongoing Research in Postgraduate Studies</h2>
-									<p>Under the guidance of Dr. Avishek Adhikary, Head of The Electrical Engineering Department at IIT Bhilai</p>
-									<section class="features">
-										<article>
-											<a href="#" class="image"><img src="images/urea.jpg" alt="" /></a>
-											<h3 class="major">Disposable Urinary Urea Sensor for Point-of-Care Devices</h3>
-											<p>Urea detection is one of major part of urinalysis indicating protein deficiency, liver and renal failure and abnormality in metabolic cycle. In-home periodic monitoring of urea in urine may reduce the risk of fatality for chronic kidney disease (CKD) patients</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/signal.jpg" alt="" /></a>
-											<h3 class="major">Design of a Signal Conditioning circuit to detect Fractional Order elements using sensors</h3>
-											<p>A signal conditioning circuit is used after a sensor to prepare its raw output for further processing by devices like analog-to-digital converters or microcontrollers. It performs several key functions, including amplification of weak signals to a usable voltage range, and filtering to remove unwanted noise or interference. Additionally, it can linearize nonlinear sensor outputs, shift signal levels to match input requirements, and even convert signals from one form to another, such as current to voltage</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-									</section>
-								</div>
-							</section>
-						    </section>
-
-				<!-- Five -->
-							<section id="five" class="wrapper alt style1">
-						
-						          <div class="inner">
-									<h2 class="major">Projects</h2>
-									<p>Graduation and Post Graduation Projects</p>
-									<section class="features">
-										<article>
-											<a href="#" class="image"><img src="images/meter.jpg" alt="" /></a>
-											<h3 class="major">Smart Energy Meter</h3>
-											<p>Under the guidance of Dr. Barnali Kundu, Head of The Electrical Engineering Department at Guru Nanak Institute of Technology, Kolkata</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/DIP.jpg" alt="" /></a>
-											<h3 class="major">An Automated Machine Vision Based System for Fruit Sorting and Grading</h3>
-											<p>Under the guidance of Dr. Hathiram Nenavath, Assistant Professor of Electronics and Communication Engineering Department at IIT Bhilai</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/cap.jpg" alt="" /></a>
-											<h3 class="major">Social Distancing cap</h3>
-											<p>The overall idea was that to invent a cap by which we can keep distance from others in the period of COVID-19 (Independent Project)</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/irrigation.jpg" alt="" /></a>
-											<h3 class="major">Smart irrigation system</h3>
-											<p>A Smart Irrigation System powered by the ESP8266 microcontroller automates the watering of plants based on soil moisture levels, weather conditions, and time scheduling — all controllable via the internet (Independent project)</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-									</section>
-								</div>
-							</section>
-                                                 </section>
-
-				<!-- Footer -->
-					<section id="footer">
-						<div class="inner">
-							<h2 class="major">Get in touch</h2>
-							<p>    </p>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="email" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="4"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-							<ul class="contact">
-								<li class="icon solid fa-home">
-									Autostand<br />
-									South Srirampur, Purba Barddhaman<br />
-									West Bengal, India, Pin-741316
-								</li>
-								<li class="icon solid fa-phone">+91 7001768790</li>
-								<li class="icon solid fa-envelope"><a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ifkv=AXH0vVsYxqyFlmfW3EpSVE4efMNhryrfbFKQtHnzMOr5d6QcIxD3QtGZvpp4r1DcgTnKfpVIWC47&rip=1&sacu=1&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S924811004%3A1744051172230645">debjitsarkar.engineer@gmail.com</a></li>
-								<li class="icon brands fa-linkedin"><a href="https://www.linkedin.com/in/debjit-sarkar-3a2327240/">Connect on Linkedin</a></li>
-								<li class="icon brands fa-facebook-f"><a href="https://www.facebook.com/debjit.sarkar.777">Connect on Facebook</a></li>
-								<li class="icon brands fa-instagram"><a href="https://www.instagram.com/debjit_sarkarr/">Connect on Instagram</a></li>
-								<li class="icon brands fa-twitter"><a href="https://x.com/iitian_debjit">Connect on Twitter</a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design by <a href="#">Debjit Sarkar</a></li>
-							</ul>
+				<!-- Two -->
+				<section id="two" class="wrapper alt spotlight style2">
+					<div class="inner">
+						<a href="#" class="image"><img src="images/MAKAUT.jpg" alt="" /></a>
+						<div class="content">
+							<h2 class="major">Graduation</h2>
+							<p>Completed Bachelor of Technology in Electrical Engineering from West Bengal University of Technology from 2018 to 2022</p>
+							<a href="#" class="special">Learn more</a>
 						</div>
-					</section>
+					</div>
+				</section>
 
-			</div>
+				<!-- Three -->
+				<section id="three" class="wrapper spotlight style3">
+					<div class="inner">
+						<a href="#" class="image"><img src="images/NHS.jpg" alt="" /></a>
+						<div class="content">
+							<h2 class="major">Schooling</h2>
+							<p>Completed Secondary in 2016 and Higher Secondary (Science) in 2018 from Nabadwip Hindu School</p>
+							<a href="#" class="special">Learn more</a>
+						</div>
+					</div>
+				</section>
+
+				<!-- Four -->
+				<section id="four" class="wrapper alt style1">
+					<div class="inner">
+						<h2 class="major">Ongoing Research in Postgraduate Studies</h2>
+						<p>Under the guidance of Dr. Avishek Adhikary, Head of The Electrical Engineering Department at IIT Bhilai</p>
+						<section class="features">
+							<article>
+								<a href="#" class="image"><img src="images/urea.jpg" alt="" /></a>
+								<h3 class="major">Disposable Urinary Urea Sensor for Point-of-Care Devices</h3>
+								<p>Urea detection is a major part of urinalysis indicating protein deficiency, liver and renal failure, and metabolic abnormalities. In-home monitoring of urea can reduce fatality risks for CKD patients.</p>
+							</article>
+							<article>
+								<a href="#" class="image"><img src="images/signal.jpg" alt="" /></a>
+								<h3 class="major">Design of a Signal Conditioning Circuit to Detect Fractional Order Elements</h3>
+								<p>This circuit amplifies and filters raw sensor data for accurate signal interpretation by ADCs or microcontrollers.</p>
+							</article>
+						</section>
+					</div>
+				</section>
+			</section>
+
+			<!-- Five -->
+			<section id="five" class="wrapper alt style1">
+				<div class="inner">
+					<h2 class="major">Projects</h2>
+					<p>Graduation and Post Graduation Projects</p>
+					<section class="features">
+						<article>
+							<a href="#" class="image"><img src="images/meter.jpg" alt="" /></a>
+							<h3 class="major">Smart Energy Meter</h3>
+							<p>Under the guidance of Dr. Barnali Kundu, Guru Nanak Institute of Technology, Kolkata</p>
+						</article>
+						<article>
+							<a href="#" class="image"><img src="images/DIP.jpg" alt="" /></a>
+							<h3 class="major">Machine Vision Based Fruit Sorting System</h3>
+							<p>Under the guidance of Dr. Hathiram Nenavath, Assistant Professor, IIT Bhilai</p>
+						</article>
+						<article>
+							<a href="#" class="image"><img src="images/cap.jpg" alt="" /></a>
+							<h3 class="major">Social Distancing Cap</h3>
+							<p>Cap-based wearable device for maintaining distance during COVID-19 (Independent Project)</p>
+						</article>
+						<article>
+							<a href="#" class="image"><img src="images/irrigation.jpg" alt="" /></a>
+							<h3 class="major">Smart Irrigation System</h3>
+							<p>IoT-based smart irrigation system using ESP8266 for soil moisture monitoring (Independent Project)</p>
+						</article>
+					</section>
+				</div>
+			</section>
+
+			<!-- ===== Certificates Section ===== -->
+			<section id="certificates" class="wrapper spotlight style3">
+				<div class="inner">
+					<h2 class="major">Certificates</h2>
+					<p>A showcase of my achievements, workshops, and certifications.</p>
+
+					<div class="slideshow-container">
+						<div class="mySlides fade">
+							<img src="images/cert1.jpg" style="width:100%" alt="Certificate 1">
+						</div>
+						<div class="mySlides fade">
+							<img src="images/cert2.jpg" style="width:100%" alt="Certificate 2">
+						</div>
+						<div class="mySlides fade">
+							<img src="images/cert3.jpg" style="width:100%" alt="Certificate 3">
+						</div>
+
+						<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+						<a class="next" onclick="plusSlides(1)">&#10095;</a>
+					</div>
+
+					<div class="dot-container">
+						<span class="dot" onclick="currentSlide(1)"></span>
+						<span class="dot" onclick="currentSlide(2)"></span>
+						<span class="dot" onclick="currentSlide(3)"></span>
+					</div>
+				</div>
+			</section>
+
+			<!-- Footer -->
+			<section id="footer">
+				<div class="inner">
+					<h2 class="major">Get in touch</h2>
+					<ul class="contact">
+						<li class="icon solid fa-home">
+							Autostand<br />
+							South Srirampur, Purba Barddhaman<br />
+							West Bengal, India, Pin-741316
+						</li>
+						<li class="icon solid fa-phone">+91 7001768790</li>
+						<li class="icon solid fa-envelope"><a href="mailto:debjitsarkar.engineer@gmail.com">debjitsarkar.engineer@gmail.com</a></li>
+						<li class="icon brands fa-linkedin"><a href="https://www.linkedin.com/in/debjit-sarkar-3a2327240/">LinkedIn</a></li>
+						<li class="icon brands fa-facebook-f"><a href="https://www.facebook.com/debjit.sarkar.777">Facebook</a></li>
+						<li class="icon brands fa-instagram"><a href="https://www.instagram.com/debjit_sarkarr/">Instagram</a></li>
+						<li class="icon brands fa-twitter"><a href="https://x.com/iitian_debjit">Twitter</a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Debjit Sarkar. All rights reserved.</li>
+						<li>Design by <a href="#">Debjit Sarkar</a></li>
+					</ul>
+				</div>
+			</section>
+
+		</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+		<!-- Slideshow Script -->
+		<script>
+			let slideIndex = 1;
+			showSlides(slideIndex);
+
+			function plusSlides(n) {
+				showSlides(slideIndex += n);
+			}
+
+			function currentSlide(n) {
+				showSlides(slideIndex = n);
+			}
+
+			function showSlides(n) {
+				let i;
+				let slides = document.getElementsByClassName("mySlides");
+				let dots = document.getElementsByClassName("dot");
+				if (n > slides.length) {slideIndex = 1}
+				if (n < 1) {slideIndex = slides.length}
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";
+				}
+				for (i = 0; i < dots.length; i++) {
+					dots[i].className = dots[i].className.replace(" active", "");
+				}
+				slides[slideIndex-1].style.display = "block";
+				dots[slideIndex-1].className += " active";
+			}
+		</script>
 
 	</body>
 </html>
-
-
