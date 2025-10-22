@@ -6,15 +6,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
 		<style>
 			/* ===== Certificate Slideshow Styling ===== */
 			.slideshow-container {
 				position: relative;
 				max-width: 800px;
-				margin: auto;
-				border-radius: 10px;
+				margin: 40px auto;
+				border-radius: 15px;
 				overflow: hidden;
-				box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+				box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
 			}
 
 			.mySlides {
@@ -24,56 +25,24 @@
 			}
 
 			@keyframes fade {
-				from {opacity: 0.4}
-				to {opacity: 1}
+				from {opacity: 0.3;}
+				to {opacity: 1;}
 			}
 
-			.prev, .next {
-				cursor: pointer;
-				position: absolute;
-				top: 50%;
-				width: auto;
-				padding: 16px;
-				margin-top: -22px;
+			/* Optional caption styling */
+			.caption {
 				color: white;
-				font-weight: bold;
 				font-size: 18px;
-				border-radius: 0 3px 3px 0;
-				user-select: none;
-				background-color: rgba(0,0,0,0.4);
-				transition: 0.3s;
-			}
-
-			.next {
-				right: 0;
-				border-radius: 3px 0 0 3px;
-			}
-
-			.prev:hover, .next:hover {
-				background-color: rgba(0,0,0,0.8);
-			}
-
-			.dot-container {
+				position: absolute;
+				bottom: 12px;
+				width: 100%;
 				text-align: center;
-				padding: 10px;
-			}
-
-			.dot {
-				cursor: pointer;
-				height: 15px;
-				width: 15px;
-				margin: 0 3px;
-				background-color: #bbb;
-				border-radius: 50%;
-				display: inline-block;
-				transition: background-color 0.6s ease;
-			}
-
-			.active, .dot:hover {
-				background-color: #717171;
+				background: rgba(0, 0, 0, 0.3);
+				padding: 10px 0;
 			}
 		</style>
 	</head>
+
 	<body class="is-preload">
 
 		<!-- Page Wrapper -->
@@ -105,8 +74,7 @@
 						<a href="#" class="image"><img src="images/IIT_Bhilai.jpg" alt=""/></a>
 						<div class="content">
 							<h2 class="major">Post Graduation</h2>
-							<p>Pursuing Master of Technology in Control and Instrumentation, Department of Electrical Engineering at Indian Institute of Technology Bhilai from July 2024</p>
-							<a href="#" class="special">Learn more</a>
+							<p>Pursuing Master of Technology in Control and Instrumentation, Department of Electrical Engineering at Indian Institute of Technology Bhilai from July 2024.</p>
 						</div>
 					</div>
 				</section>
@@ -117,8 +85,7 @@
 						<a href="#" class="image"><img src="images/MAKAUT.jpg" alt="" /></a>
 						<div class="content">
 							<h2 class="major">Graduation</h2>
-							<p>Completed Bachelor of Technology in Electrical Engineering from West Bengal University of Technology from 2018 to 2022</p>
-							<a href="#" class="special">Learn more</a>
+							<p>Completed Bachelor of Technology in Electrical Engineering from West Bengal University of Technology (2018–2022).</p>
 						</div>
 					</div>
 				</section>
@@ -129,8 +96,7 @@
 						<a href="#" class="image"><img src="images/NHS.jpg" alt="" /></a>
 						<div class="content">
 							<h2 class="major">Schooling</h2>
-							<p>Completed Secondary in 2016 and Higher Secondary (Science) in 2018 from Nabadwip Hindu School</p>
-							<a href="#" class="special">Learn more</a>
+							<p>Completed Secondary in 2016 and Higher Secondary (Science) in 2018 from Nabadwip Hindu School.</p>
 						</div>
 					</div>
 				</section>
@@ -139,17 +105,17 @@
 				<section id="four" class="wrapper alt style1">
 					<div class="inner">
 						<h2 class="major">Ongoing Research in Postgraduate Studies</h2>
-						<p>Under the guidance of Dr. Avishek Adhikary, Head of The Electrical Engineering Department at IIT Bhilai</p>
+						<p>Under the guidance of Dr. Avishek Adhikary, Head of The Electrical Engineering Department at IIT Bhilai.</p>
 						<section class="features">
 							<article>
 								<a href="#" class="image"><img src="images/urea.jpg" alt="" /></a>
 								<h3 class="major">Disposable Urinary Urea Sensor for Point-of-Care Devices</h3>
-								<p>Urea detection is a major part of urinalysis indicating protein deficiency, liver and renal failure, and metabolic abnormalities. In-home monitoring of urea can reduce fatality risks for CKD patients.</p>
+								<p>Urea detection is a key part of urinalysis indicating protein deficiency, liver or renal failure, and metabolic abnormalities. In-home monitoring can help reduce CKD fatality risks.</p>
 							</article>
 							<article>
 								<a href="#" class="image"><img src="images/signal.jpg" alt="" /></a>
-								<h3 class="major">Design of a Signal Conditioning Circuit to Detect Fractional Order Elements</h3>
-								<p>This circuit amplifies and filters raw sensor data for accurate signal interpretation by ADCs or microcontrollers.</p>
+								<h3 class="major">Signal Conditioning Circuit for Fractional Order Element Detection</h3>
+								<p>This circuit amplifies and filters sensor outputs for accurate signal analysis by microcontrollers and ADCs.</p>
 							</article>
 						</section>
 					</div>
@@ -165,52 +131,44 @@
 						<article>
 							<a href="#" class="image"><img src="images/meter.jpg" alt="" /></a>
 							<h3 class="major">Smart Energy Meter</h3>
-							<p>Under the guidance of Dr. Barnali Kundu, Guru Nanak Institute of Technology, Kolkata</p>
+							<p>Under the guidance of Dr. Barnali Kundu, Guru Nanak Institute of Technology, Kolkata.</p>
 						</article>
 						<article>
 							<a href="#" class="image"><img src="images/DIP.jpg" alt="" /></a>
-							<h3 class="major">Machine Vision Based Fruit Sorting System</h3>
-							<p>Under the guidance of Dr. Hathiram Nenavath, Assistant Professor, IIT Bhilai</p>
+							<h3 class="major">Automated Fruit Sorting System</h3>
+							<p>Under the guidance of Dr. Hathiram Nenavath, Assistant Professor, IIT Bhilai.</p>
 						</article>
 						<article>
 							<a href="#" class="image"><img src="images/cap.jpg" alt="" /></a>
 							<h3 class="major">Social Distancing Cap</h3>
-							<p>Cap-based wearable device for maintaining distance during COVID-19 (Independent Project)</p>
+							<p>Cap-based wearable device for maintaining social distance during COVID-19 (Independent Project).</p>
 						</article>
 						<article>
 							<a href="#" class="image"><img src="images/irrigation.jpg" alt="" /></a>
 							<h3 class="major">Smart Irrigation System</h3>
-							<p>IoT-based smart irrigation system using ESP8266 for soil moisture monitoring (Independent Project)</p>
+							<p>IoT-based irrigation system using ESP8266 for soil moisture monitoring (Independent Project).</p>
 						</article>
 					</section>
 				</div>
 			</section>
 
-			<!-- ===== Certificates Section ===== -->
+			<!-- ===== Certificates Section (Auto Slideshow) ===== -->
 			<section id="certificates" class="wrapper spotlight style3">
 				<div class="inner">
 					<h2 class="major">Certificates</h2>
-					<p>A showcase of my achievements, workshops, and certifications.</p>
-
 					<div class="slideshow-container">
 						<div class="mySlides fade">
-							<img src="images/cert1.jpg" style="width:100%" alt="Certificate 1">
+							<img src="images/cert1.jpg" alt="Certificate 1">
 						</div>
 						<div class="mySlides fade">
-							<img src="images/cert2.jpg" style="width:100%" alt="Certificate 2">
+							<img src="images/cert2.jpg" alt="Certificate 2">
 						</div>
 						<div class="mySlides fade">
-							<img src="images/cert3.jpg" style="width:100%" alt="Certificate 3">
+							<img src="images/cert3.jpg" alt="Certificate 3">
 						</div>
-
-						<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-						<a class="next" onclick="plusSlides(1)">&#10095;</a>
-					</div>
-
-					<div class="dot-container">
-						<span class="dot" onclick="currentSlide(1)"></span>
-						<span class="dot" onclick="currentSlide(2)"></span>
-						<span class="dot" onclick="currentSlide(3)"></span>
+						<div class="mySlides fade">
+							<img src="images/cert4.jpg" alt="Certificate 4">
+						</div>
 					</div>
 				</div>
 			</section>
@@ -249,33 +207,21 @@
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
 
-		<!-- Slideshow Script -->
+		<!-- Auto Slideshow Script -->
 		<script>
-			let slideIndex = 1;
-			showSlides(slideIndex);
+			let slideIndex = 0;
+			autoShowSlides();
 
-			function plusSlides(n) {
-				showSlides(slideIndex += n);
-			}
-
-			function currentSlide(n) {
-				showSlides(slideIndex = n);
-			}
-
-			function showSlides(n) {
+			function autoShowSlides() {
 				let i;
 				let slides = document.getElementsByClassName("mySlides");
-				let dots = document.getElementsByClassName("dot");
-				if (n > slides.length) {slideIndex = 1}
-				if (n < 1) {slideIndex = slides.length}
 				for (i = 0; i < slides.length; i++) {
 					slides[i].style.display = "none";
 				}
-				for (i = 0; i < dots.length; i++) {
-					dots[i].className = dots[i].className.replace(" active", "");
-				}
+				slideIndex++;
+				if (slideIndex > slides.length) {slideIndex = 1}
 				slides[slideIndex-1].style.display = "block";
-				dots[slideIndex-1].className += " active";
+				setTimeout(autoShowSlides, 5000); // Change image every 5 seconds
 			}
 		</script>
 
