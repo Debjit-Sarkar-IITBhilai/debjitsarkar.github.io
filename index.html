@@ -23,7 +23,14 @@
 				width: 100%;
 				animation: fade 1.5s ease-in-out;
 			}
-
+			
+            .mySlides img {
+		        width: 100%;
+	         	height: 600px;        /* Adjust the height as you like */
+	        	object-fit: contain;  /* Keeps the certificate’s shape correct */
+		        background-color: #fff; /* Optional: adds white background behind transparent areas */
+	        }
+			
 			@keyframes fade {
 				from {opacity: 0.3;}
 				to {opacity: 1;}
@@ -225,5 +232,6 @@
 
 	</body>
 </html>
+
 
 
