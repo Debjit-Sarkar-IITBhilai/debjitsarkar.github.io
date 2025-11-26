@@ -49,9 +49,21 @@
 			}
 			
 			.banner-desc {
-                text-transform: none !important;
-                padding-left: 18px;
-                text-indent: -18px;
+               list-style: none;
+               margin: 0;
+               padding: 0;
+            }
+
+           .banner-desc li {
+               margin: 6px 0;
+               position: relative;
+               padding-left: 20px;       /* space before text */
+            }
+
+           .banner-desc li::before {
+               content: "-";             /* show dash like before */
+               position: absolute;
+              left: 0;
             }
           }
 		</style>
@@ -72,13 +84,13 @@
 				<div class="inner">
 					<div class="logo"><img src="images/logo1.jpg" alt="Logo" style="height: 250px; border-radius: 30px;" /></div>
 					<h2>Debjit Sarkar</h2>
-					<p class="banner-desc">
-					- Deputy Manager at TASA Gulf Industry LLC, Dubai, UAE<br>
-					- Teaching Assistant at IIT Bhilai<br>
-					- Researcher at ASCII Lab<br>
-					- Former Quality Engineer at JCHACIL<br>
-					- Former BDA at BYJU'S</p>
-				</div>
+					<ul class="banner-desc">
+                 <li>Deputy Manager at TASA Gulf Industry LLC, Dubai, UAE</li>
+                 <li>Teaching Assistant at IIT Bhilai</li>
+                 <li>Researcher at ASCII Lab</li>
+                 <li>Former Quality Engineer at JCHACIL</li>
+                 <li>Former BDA at BYJU'S</li>
+                 </ul>
 			</section>
 
 			<!-- Wrapper -->
@@ -263,6 +275,7 @@
 
 	</body>
 </html>
+
 
 
 
