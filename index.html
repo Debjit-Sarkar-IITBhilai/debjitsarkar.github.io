@@ -70,6 +70,9 @@
 			  will-change: opacity, transform;
 			  cursor: default;
 			  padding-right: 8px;
+			  /* make non-interactive: not clickable or focusable */
+			  pointer-events: none;
+			  user-select: none;
 			}
 
 			/* pretty dash */
@@ -105,11 +108,8 @@
 			  opacity: 0.9;
 			}
 
-			/* Hover pauses the cycle and highlights hovered item */
-			.banner-desc li:hover {
-			  transform: translateY(-2px) scale(1.02);
-			  box-shadow: 0 8px 28px rgba(0,0,0,0.14);
-			}
+			/* Note: hover/focus rules won't trigger because pointer-events are disabled,
+			   which ensures the list is not interactive. */
 
 			/* When user prefers reduced motion, keep things simple */
 			@media (prefers-reduced-motion: reduce) {
@@ -138,15 +138,15 @@
 			<section id="banner">
 				<div class="inner">
 					<div class="logo"><img src="images/logo1.jpg" alt="Logo" style="height: 200px; border-radius: 30px;" /></div>
-					<h2>Debjit Sarkar</h2>
+					<h2 id="main-name">Debjit Sarkar</h2>
 
-					<!-- role list with improved accessibility -->
+					<!-- role list (non-clickable) -->
 					<ul class="banner-desc" aria-label="Professional roles">
-						<li tabindex="0">Deputy Manager at TASA Gulf Industry LLC, Dubai, UAE</li>
-						<li tabindex="0">Teaching Assistant at IIT Bhilai</li>
-						<li tabindex="0">Researcher at ASCII Lab</li>
-						<li tabindex="0">Former Quality Engineer at JCHACIL</li>
-						<li tabindex="0">Former BDA at BYJU'S</li>
+						<li>Deputy Manager at TASA Gulf Industry LLC, Dubai, UAE</li>
+						<li>Teaching Assistant at IIT Bhilai</li>
+						<li>Researcher at ASCII Lab</li>
+						<li>Former Quality Engineer at JCHACIL</li>
+						<li>Former BDA at BYJU'S</li>
 					</ul>
 				</div>
 			</section>
@@ -331,20 +331,27 @@
 			}
 		</script>
 
-		<!-- Role-list entrance + cycling highlight script -->
+		<!-- Role-list entrance + cycling highlight script
+		     Starts AFTER full page load (images/fonts) so the "Debjit Sarkar" heading/logo finish appearing.
+		     The list is non-interactive (pointer-events: none) so it's not clickable/focusable. -->
 		<script>
-			document.addEventListener('DOMContentLoaded', function () {
+			// Wait for full load (images/fonts) to ensure the name/logo have appeared
+			window.addEventListener('load', function () {
+			  // small buffer to ensure any header animations finish
+			  const bufferAfterLoad = 500; // ms
+			  setTimeout(initRoleList, bufferAfterLoad);
+			});
+
+			function initRoleList() {
 			  const items = Array.from(document.querySelectorAll('.banner-desc li'));
 			  if (!items.length) return;
 
-			  // staggered entrance
+			  // staggered entrance AFTER the header/name has appeared
 			  items.forEach((li, idx) => {
-			    // ensure focusable for keyboard users
-			    li.setAttribute('role', 'listitem');
 			    setTimeout(() => li.classList.add('visible'), idx * 180); // 180ms stagger
 			  });
 
-			  // cycling highlight
+			  // cycling highlight (visual only)
 			  let activeIndex = 0;
 			  let interval = null;
 			  const cycleDelay = 3000; // ms
@@ -371,21 +378,12 @@
 			    startCycle();
 			  }, items.length * 180 + 300);
 
-			  // pause on hover and allow click to select an item
-			  items.forEach((li, idx) => {
-			    li.addEventListener('mouseenter', () => { stopCycle(); setActive(idx); });
-			    li.addEventListener('mouseleave', () => { activeIndex = idx; startCycle(); });
-			    li.addEventListener('click', () => { stopCycle(); setActive(idx); });
-			    // keyboard support: focus/blur
-			    li.addEventListener('focus', () => { stopCycle(); setActive(idx); });
-			    li.addEventListener('blur', () => { activeIndex = idx; startCycle(); });
-			  });
-
-			  // visibility API: pause cycling if tab hidden
+			  // do not add hover/click/focus listeners — list must remain non-interactive
+			  // pause/play only when tab visibility changes
 			  document.addEventListener('visibilitychange', () => {
 			    if (document.hidden) stopCycle(); else startCycle();
 			  });
-			});
+			}
 		</script>
 
 	</body>
