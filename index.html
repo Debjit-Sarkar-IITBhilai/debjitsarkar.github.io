@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Debjit Sarkar - IIT BH</title>
+		<title>Debjit Sarkar</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -48,7 +48,7 @@
 				padding: 10px 0;
 			}
 
-			/* ===== Animated role list: slide-up fade + looping highlight ===== */
+			/* ===== Animated role list: slide-up fade (no automatic highlighter) ===== */
 			.banner-desc {
 			  list-style: none;
 			  margin: 0;
@@ -91,25 +91,6 @@
 			  opacity: 1;
 			  transform: translateY(0) scale(1);
 			}
-
-			/* "active" highlights one item in the cycle */
-			.banner-desc li.active {
-			  transform: translateY(0) scale(1.03);
-			  box-shadow: 0 6px 22px rgba(0,0,0,0.12);
-			  background: rgba(255,255,255,0.03);
-			  border-radius: 6px;
-			  padding: 6px 10px 6px 24px; /* keep dash aligned */
-			  transition: transform 350ms cubic-bezier(.2,.9,.2,1), box-shadow 350ms ease, background 350ms ease;
-			}
-
-			/* subtle accent on dash of active item */
-			.banner-desc li.active::before {
-			  transform: translateX(-2px) rotate(-6deg);
-			  opacity: 0.9;
-			}
-
-			/* Note: hover/focus rules won't trigger because pointer-events are disabled,
-			   which ensures the list is not interactive. */
 
 			/* When user prefers reduced motion, keep things simple */
 			@media (prefers-reduced-motion: reduce) {
@@ -190,7 +171,7 @@
 				<!-- Four -->
 				<section id="four" class="wrapper spotlight style4">
 					<div class="inner">
-						<a href="#" class="image"><img src="images/NHS.jpg" alt="" /></a>
+						<a href="#" class="image"><img src="images/NHS.jpg" alt=""/></a>
 						<div class="content">
 							<h2 class="major">Schooling</h2>
 							<p>Completed Secondary in 2016 and Higher Secondary (Science) in 2018 from Nabadwip Hindu School.</p>
@@ -331,9 +312,7 @@
 			}
 		</script>
 
-		<!-- Role-list entrance + cycling highlight script
-		     Starts AFTER full page load (images/fonts) so the "Debjit Sarkar" heading/logo finish appearing.
-		     The list is non-interactive (pointer-events: none) so it's not clickable/focusable. -->
+		<!-- Role-list entrance script only (no cycling/highlighter) -->
 		<script>
 			// Wait for full load (images/fonts) to ensure the name/logo have appeared
 			window.addEventListener('load', function () {
@@ -351,38 +330,7 @@
 			    setTimeout(() => li.classList.add('visible'), idx * 180); // 180ms stagger
 			  });
 
-			  // cycling highlight (visual only)
-			  let activeIndex = 0;
-			  let interval = null;
-			  const cycleDelay = 3000; // ms
-
-			  function setActive(i) {
-			    items.forEach((li, idx) => li.classList.toggle('active', idx === i));
-			  }
-
-			  function startCycle() {
-			    if (interval) return;
-			    interval = setInterval(() => {
-			      activeIndex = (activeIndex + 1) % items.length;
-			      setActive(activeIndex);
-			    }, cycleDelay);
-			  }
-
-			  function stopCycle() {
-			    if (interval) { clearInterval(interval); interval = null; }
-			  }
-
-			  // start after entrance completes
-			  setTimeout(() => {
-			    setActive(activeIndex);
-			    startCycle();
-			  }, items.length * 180 + 300);
-
-			  // do not add hover/click/focus listeners — list must remain non-interactive
-			  // pause/play only when tab visibility changes
-			  document.addEventListener('visibilitychange', () => {
-			    if (document.hidden) stopCycle(); else startCycle();
-			  });
+			  // No cycling, no highlighting — the list simply appears and stays static.
 			}
 		</script>
 
