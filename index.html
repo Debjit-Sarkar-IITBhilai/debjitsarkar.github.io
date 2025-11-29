@@ -12,7 +12,7 @@
 			.slideshow-container {
 				position: relative;
 				max-width: 600px;
-				height: 400px; 
+				height: 400px;
 				margin: 40px auto;
 				border-radius: 15px;
 				overflow: hidden;
@@ -47,26 +47,80 @@
 				background: rgba(0, 0, 0, 0.3);
 				padding: 10px 0;
 			}
-			
+
+			/* ===== Animated role list: slide-up fade + looping highlight ===== */
 			.banner-desc {
-               list-style: none;
-               margin: 0;
-               padding: 0;
-			   font-size: 20px;
-            }
+			  list-style: none;
+			  margin: 0;
+			  padding: 0;
+			  font-size: 20px;
+			  display: inline-block;        /* keep it compact */
+			  text-align: left;
+			}
 
-           .banner-desc li {
-               margin: 6px 0;
-               position: relative;
-               padding-left: 20px;       /* space before text */
-            }
+			/* Base state: invisible and slightly lowered */
+			.banner-desc li {
+			  margin: 6px 0;
+			  position: relative;
+			  padding-left: 24px;           /* space before text for dash */
+			  left: 0;
+			  opacity: 0;
+			  transform: translateY(14px) scale(0.99);
+			  transition: transform 450ms cubic-bezier(.2,.9,.2,1), opacity 450ms ease;
+			  will-change: opacity, transform;
+			  cursor: default;
+			  padding-right: 8px;
+			}
 
-           .banner-desc li::before {
-               content: "-";             /* show dash like before */
-               position: absolute;
-              left: 0;
-            }
-          }
+			/* pretty dash */
+			.banner-desc li::before {
+			  content: "—";
+			  position: absolute;
+			  left: 0;
+			  top: 0;
+			  font-weight: 600;
+			  transform-origin: left center;
+			  transition: transform 300ms ease, opacity 300ms ease;
+			}
+
+			/* When we add .visible the item slides up & fades in */
+			.banner-desc li.visible {
+			  opacity: 1;
+			  transform: translateY(0) scale(1);
+			}
+
+			/* "active" highlights one item in the cycle */
+			.banner-desc li.active {
+			  transform: translateY(0) scale(1.03);
+			  box-shadow: 0 6px 22px rgba(0,0,0,0.12);
+			  background: rgba(255,255,255,0.03);
+			  border-radius: 6px;
+			  padding: 6px 10px 6px 24px; /* keep dash aligned */
+			  transition: transform 350ms cubic-bezier(.2,.9,.2,1), box-shadow 350ms ease, background 350ms ease;
+			}
+
+			/* subtle accent on dash of active item */
+			.banner-desc li.active::before {
+			  transform: translateX(-2px) rotate(-6deg);
+			  opacity: 0.9;
+			}
+
+			/* Hover pauses the cycle and highlights hovered item */
+			.banner-desc li:hover {
+			  transform: translateY(-2px) scale(1.02);
+			  box-shadow: 0 8px 28px rgba(0,0,0,0.14);
+			}
+
+			/* When user prefers reduced motion, keep things simple */
+			@media (prefers-reduced-motion: reduce) {
+			  .banner-desc li { transition: none; transform: none; opacity: 1; }
+			}
+
+			/* small responsive tweak so list wraps nicely on small screens */
+			@media (max-width: 520px) {
+			  .banner-desc { font-size: 18px; }
+			  .banner-desc li { padding-left: 22px; }
+			}
 		</style>
 	</head>
 
@@ -85,13 +139,16 @@
 				<div class="inner">
 					<div class="logo"><img src="images/logo1.jpg" alt="Logo" style="height: 200px; border-radius: 30px;" /></div>
 					<h2>Debjit Sarkar</h2>
-					<ul class="banner-desc">
-                 <li>Deputy Manager at TASA Gulf Industry LLC, Dubai, UAE</li>
-                 <li>Teaching Assistant at IIT Bhilai</li>
-                 <li>Researcher at ASCII Lab</li>
-                 <li>Former Quality Engineer at JCHACIL</li>
-                 <li>Former BDA at BYJU'S</li>
-                 </ul>
+
+					<!-- role list with improved accessibility -->
+					<ul class="banner-desc" aria-label="Professional roles">
+						<li tabindex="0">Deputy Manager at TASA Gulf Industry LLC, Dubai, UAE</li>
+						<li tabindex="0">Teaching Assistant at IIT Bhilai</li>
+						<li tabindex="0">Researcher at ASCII Lab</li>
+						<li tabindex="0">Former Quality Engineer at JCHACIL</li>
+						<li tabindex="0">Former BDA at BYJU'S</li>
+					</ul>
+				</div>
 			</section>
 
 			<!-- Wrapper -->
@@ -207,16 +264,16 @@
 							<img src="images/cert3.jpg" alt="Certificate 3">
 						</div>
 						<div class="mySlides fade">
-							<img src="images/cert4.jpg" alt="Certificate 1">
+							<img src="images/cert4.jpg" alt="Certificate 4">
 						</div>
 						<div class="mySlides fade">
-							<img src="images/cert5.jpg" alt="Certificate 1">
+							<img src="images/cert5.jpg" alt="Certificate 5">
 						</div>
 						<div class="mySlides fade">
-							<img src="images/cert6.jpg" alt="Certificate 1">
+							<img src="images/cert6.jpg" alt="Certificate 6">
 						</div>
 						<div class="mySlides fade">
-							<img src="images/cert7.jpg" alt="Certificate 1">
+							<img src="images/cert7.jpg" alt="Certificate 7">
 						</div>
 					</div>
 				</div>
@@ -270,47 +327,66 @@
 				slideIndex++;
 				if (slideIndex > slides.length) {slideIndex = 1}
 				slides[slideIndex-1].style.display = "block";
-				setTimeout(autoShowSlides, 6000); // Change image every 5 seconds
+				setTimeout(autoShowSlides, 6000); // Change image every 6 seconds
 			}
+		</script>
+
+		<!-- Role-list entrance + cycling highlight script -->
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+			  const items = Array.from(document.querySelectorAll('.banner-desc li'));
+			  if (!items.length) return;
+
+			  // staggered entrance
+			  items.forEach((li, idx) => {
+			    // ensure focusable for keyboard users
+			    li.setAttribute('role', 'listitem');
+			    setTimeout(() => li.classList.add('visible'), idx * 180); // 180ms stagger
+			  });
+
+			  // cycling highlight
+			  let activeIndex = 0;
+			  let interval = null;
+			  const cycleDelay = 3000; // ms
+
+			  function setActive(i) {
+			    items.forEach((li, idx) => li.classList.toggle('active', idx === i));
+			  }
+
+			  function startCycle() {
+			    if (interval) return;
+			    interval = setInterval(() => {
+			      activeIndex = (activeIndex + 1) % items.length;
+			      setActive(activeIndex);
+			    }, cycleDelay);
+			  }
+
+			  function stopCycle() {
+			    if (interval) { clearInterval(interval); interval = null; }
+			  }
+
+			  // start after entrance completes
+			  setTimeout(() => {
+			    setActive(activeIndex);
+			    startCycle();
+			  }, items.length * 180 + 300);
+
+			  // pause on hover and allow click to select an item
+			  items.forEach((li, idx) => {
+			    li.addEventListener('mouseenter', () => { stopCycle(); setActive(idx); });
+			    li.addEventListener('mouseleave', () => { activeIndex = idx; startCycle(); });
+			    li.addEventListener('click', () => { stopCycle(); setActive(idx); });
+			    // keyboard support: focus/blur
+			    li.addEventListener('focus', () => { stopCycle(); setActive(idx); });
+			    li.addEventListener('blur', () => { activeIndex = idx; startCycle(); });
+			  });
+
+			  // visibility API: pause cycling if tab hidden
+			  document.addEventListener('visibilitychange', () => {
+			    if (document.hidden) stopCycle(); else startCycle();
+			  });
+			});
 		</script>
 
 	</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
