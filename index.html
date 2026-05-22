@@ -25,18 +25,17 @@
 				animation: fade 3s ease-out;
 			}
 			
-            .mySlides img {
-		        width: 100%;
-	         	height: 400px;        /* Adjust the height as you like */
-	        	object-fit: contain;  /* Keeps the certificate’s shape correct */
-	        }
+			.mySlides img {
+				width: 100%;
+				height: 400px;
+				object-fit: contain;
+			}
 			
 			@keyframes fade {
 				from {opacity: 0.3;}
 				to {opacity: 1;}
 			}
 
-			/* Optional caption styling */
 			.caption {
 				color: white;
 				font-size: 18px;
@@ -48,59 +47,97 @@
 				padding: 10px 0;
 			}
 
-			/* ===== Animated role list: slide-up fade (no automatic highlighter) ===== */
+			/* ===== Achievement Section Styling ===== */
+			.achievement-list {
+				list-style: none;
+				padding-left: 0;
+				margin: 1.5em 0 0 0;
+			}
+
+			.achievement-list li {
+				position: relative;
+				margin-bottom: 1em;
+				padding: 1em 1.25em 1em 3em;
+				border-radius: 8px;
+				background: rgba(255, 255, 255, 0.05);
+				border: 1px solid rgba(255, 255, 255, 0.12);
+			}
+
+			.achievement-list li::before {
+				content: "\f091";
+				font-family: "Font Awesome 5 Free";
+				font-weight: 900;
+				position: absolute;
+				left: 1.1em;
+				top: 1em;
+				color: #ffffff;
+			}
+
+			.achievement-list h3 {
+				margin: 0 0 0.35em 0;
+				font-size: 1em;
+			}
+
+			.achievement-list p {
+				margin: 0;
+			}
+
+			/* ===== Animated role list: slide-up fade ===== */
 			.banner-desc {
-			  list-style: none;
-			  margin: 0;
-			  padding: 0;
-			  font-size: 20px;
-			  display: inline-block;        /* keep it compact */
-			  text-align: left;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				font-size: 20px;
+				display: inline-block;
+				text-align: left;
 			}
 
-			/* Base state: invisible and slightly lowered */
 			.banner-desc li {
-			  margin: 6px 0;
-			  position: relative;
-			  padding-left: 24px;           /* space before text for dash */
-			  left: 0;
-			  opacity: 0;
-			  transform: translateY(14px) scale(0.99);
-			  transition: transform 450ms cubic-bezier(.2,.9,.2,1), opacity 450ms ease;
-			  will-change: opacity, transform;
-			  cursor: default;
-			  padding-right: 8px;
-			  /* make non-interactive: not clickable or focusable */
-			  pointer-events: none;
-			  user-select: none;
+				margin: 6px 0;
+				position: relative;
+				padding-left: 24px;
+				left: 0;
+				opacity: 0;
+				transform: translateY(14px) scale(0.99);
+				transition: transform 450ms cubic-bezier(.2,.9,.2,1), opacity 450ms ease;
+				will-change: opacity, transform;
+				cursor: default;
+				padding-right: 8px;
+				pointer-events: none;
+				user-select: none;
 			}
 
-			/* pretty dash */
 			.banner-desc li::before {
-			  content: "—";
-			  position: absolute;
-			  left: 0;
-			  top: 0;
-			  font-weight: 600;
-			  transform-origin: left center;
-			  transition: transform 300ms ease, opacity 300ms ease;
+				content: "—";
+				position: absolute;
+				left: 0;
+				top: 0;
+				font-weight: 600;
+				transform-origin: left center;
+				transition: transform 300ms ease, opacity 300ms ease;
 			}
 
-			/* When we add .visible the item slides up & fades in */
 			.banner-desc li.visible {
-			  opacity: 1;
-			  transform: translateY(0) scale(1);
+				opacity: 1;
+				transform: translateY(0) scale(1);
 			}
 
-			/* When user prefers reduced motion, keep things simple */
 			@media (prefers-reduced-motion: reduce) {
-			  .banner-desc li { transition: none; transform: none; opacity: 1; }
+				.banner-desc li {
+					transition: none;
+					transform: none;
+					opacity: 1;
+				}
 			}
 
-			/* small responsive tweak so list wraps nicely on small screens */
 			@media (max-width: 520px) {
-			  .banner-desc { font-size: 18px; }
-			  .banner-desc li { padding-left: 22px; }
+				.banner-desc {
+					font-size: 18px;
+				}
+
+				.banner-desc li {
+					padding-left: 22px;
+				}
 			}
 		</style>
 	</head>
@@ -118,10 +155,12 @@
 			<!-- Banner -->
 			<section id="banner">
 				<div class="inner">
-					<div class="logo"><img src="images/logo1.jpg" alt="Logo" style="height: 200px; width: 170px; border-radius: 30px;" /></div>
+					<div class="logo">
+						<img src="images/logo1.jpg" alt="Logo" style="height: 200px; width: 170px; border-radius: 30px;" />
+					</div>
+
 					<h2 id="main-name">Debjit Sarkar</h2>
 
-					<!-- role list (non-clickable) -->
 					<ul class="banner-desc" aria-label="Professional roles">
 						<li>Future Deputy Manager at TASA Gulf Industry LLC, Dubai, UAE</li>
 						<li>Teaching Assistant at IIT Bhilai</li>
@@ -136,7 +175,44 @@
 			<!-- Wrapper -->
 			<section id="wrapper">
 
-            <!-- One -->
+				<!-- Achievements -->
+				<section id="achievements" class="wrapper spotlight style1">
+					<div class="inner">
+						<div class="content">
+							<h2 class="major">Achievements</h2>
+							<p>Some of my academic, professional, and personal achievements.</p>
+
+							<ul class="achievement-list">
+								<li>
+									<h3>Received PhD Offer from IIT Kanpur</h3>
+									<p>Selected for the PhD program in the Department of Electrical Engineering at the Indian Institute of Technology Kanpur.</p>
+								</li>
+
+								<li>
+									<h3>Teaching Assistant at IIT Bhilai</h3>
+									<p>Serving as a Teaching Assistant while pursuing M.Tech in Control and Instrumentation.</p>
+								</li>
+
+								<li>
+									<h3>Member of IEEE</h3>
+									<p>Associated with IEEE as a member and involved in academic and research-oriented activities.</p>
+								</li>
+
+								<li>
+									<h3>Researcher at ASCII Lab</h3>
+									<p>Working on research related to sensors, signal conditioning, and electrical engineering applications.</p>
+								</li>
+
+								<li>
+									<h3>Qualified for Higher Studies at IIT</h3>
+									<p>Secured admission to the M.Tech program at IIT Bhilai in Control and Instrumentation.</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<!-- One -->
 				<section id="one" class="wrapper alt spotlight style3">
 					<div class="inner">
 						<a href="#" class="image"><img src="images/IIT_K.jpg" alt=""/></a>
@@ -147,7 +223,7 @@
 					</div>
 				</section>
 
-                <!-- Two -->
+				<!-- Two -->
 				<section id="two" class="wrapper spotlight style2">
 					<div class="inner">
 						<a href="#" class="image"><img src="images/IIT_Bhilai.jpg" alt=""/></a>
@@ -185,12 +261,14 @@
 					<div class="inner">
 						<h2 class="major">Ongoing Research in Postgraduate Studies</h2>
 						<p>Under the guidance of Dr. Avishek Adhikary, Head of The Electrical Engineering Department at IIT Bhilai.</p>
+
 						<section class="features">
 							<article>
 								<a href="#" class="image"><img src="images/urea.jpg" alt="" /></a>
 								<h3 class="major">Disposable Urea Sensor for Point-of-Care Devices</h3>
 								<p>Urea detection in our body is very important as it indicates protein deficiency, liver failure and metabolic abnormalities.</p>
 							</article>
+
 							<article>
 								<a href="#" class="image"><img src="images/signal.jpg" alt="" /></a>
 								<h3 class="major">Signal Conditioning Circuit for Fractional Order Element Detection</h3>
@@ -206,42 +284,50 @@
 				<div class="inner">
 					<h2 class="major">Projects</h2>
 					<p>Graduation and Post Graduation Projects</p>
+
 					<section class="features">
 						<article>
 							<a href="#" class="image"><img src="images/meter.jpg" alt="" /></a>
 							<h3 class="major">Smart Energy Meter</h3>
 							<p>Under the guidance of Dr. Barnali Kundu, HOD of EE at Guru Nanak Institute of Technology, Kolkata.</p>
 						</article>
+
 						<article>
 							<a href="#" class="image"><img src="images/DIP.jpg" alt="" /></a>
 							<h3 class="major">Automated Fruit Sorting System</h3>
 							<p>Under the guidance of Dr. Hathiram Nenavath, Assistant Professor, IIT Bhilai.</p>
 						</article>
+
 						<article>
 							<a href="#" class="image"><img src="images/cap.jpg" alt="" /></a>
 							<h3 class="major">Social Distancing Cap</h3>
 							<p>Cap-based wearable device for maintaining social distance during COVID-19 (Independent Project).</p>
 						</article>
+
 						<article>
 							<a href="#" class="image"><img src="images/irrigation.jpg" alt="" /></a>
 							<h3 class="major">Smart Irrigation System</h3>
 							<p>IoT-based irrigation system using ESP8266 for soil moisture monitoring (Independent Project).</p>
 						</article>
+
 						<article>
 							<a href="#" class="image"><img src="images/smart_home.jpg" alt="" /></a>
 							<h3 class="major">Smart Home Automation System</h3>
 							<p>Using the smart phone all the appliances of our home can be easily operated using this device (Independent Project).</p>
 						</article>
+
 						<article>
 							<a href="#" class="image"><img src="images/dustbin.jpg" alt="" /></a>
 							<h3 class="major">Smart Dustbin</h3>
 							<p>From a certain distance, anyone can use this smart dustbin without any physical contact (Independent Project).</p>
 						</article>
+
 						<article>
 							<a href="#" class="image"><img src="images/water_pump.jpg" alt="" /></a>
 							<h3 class="major">Automatic Water Pump Controller</h3>
 							<p>This can start and stop the water pump when the water is about to finish and when the water is fully filled respectively (Independent Project).</p>
 						</article>
+
 						<article>
 							<a href="#" class="image"><img src="images/mat.jpg" alt="" /></a>
 							<h3 class="major">Visitor Sensing Mat</h3>
@@ -251,40 +337,50 @@
 				</div>
 			</section>
 
-			<!-- ===== Certificates Section (Auto Slideshow) ===== -->
+			<!-- Certificates Section -->
 			<section id="seven" class="wrapper spotlight style3">
 				<div class="inner">
 					<h2 class="major">Certifications</h2>
+
 					<div class="slideshow-container">
 						<div class="mySlides fade">
 							<img src="images/cert1.jpg" alt="Certificate 1">
 						</div>
+
 						<div class="mySlides fade">
 							<img src="images/cert2.jpg" alt="Certificate 2">
 						</div>
+
 						<div class="mySlides fade">
 							<img src="images/cert3.jpg" alt="Certificate 3">
 						</div>
+
 						<div class="mySlides fade">
 							<img src="images/cert4.jpg" alt="Certificate 4">
 						</div>
+
 						<div class="mySlides fade">
 							<img src="images/cert5.jpg" alt="Certificate 5">
 						</div>
+
 						<div class="mySlides fade">
 							<img src="images/cert6.jpg" alt="Certificate 6">
 						</div>
+
 						<div class="mySlides fade">
 							<img src="images/cert7.jpg" alt="Certificate 7">
 						</div>
+
 						<div class="mySlides fade">
 							<img src="images/cert8.jpg" alt="Certificate 8">
 						</div>
+
 						<div class="mySlides fade">
 							<img src="images/cert9.jpg" alt="Certificate 9">
 						</div>
+
 						<div class="mySlides fade">
-							<img src="images/cert10.jpg" alt="Certificate 9">
+							<img src="images/cert10.jpg" alt="Certificate 10">
 						</div>
 					</div>
 				</div>
@@ -294,6 +390,7 @@
 			<section id="footer">
 				<div class="inner">
 					<h2 class="major">Get in touch</h2>
+
 					<ul class="contact">
 						<li class="icon solid fa-home">
 							Autostand<br />
@@ -307,6 +404,7 @@
 						<li class="icon brands fa-instagram"><a href="https://www.instagram.com/debjit_sarkarr/">Instagram</a></li>
 						<li class="icon brands fa-twitter"><a href="https://x.com/iitian_debjit">Twitter</a></li>
 					</ul>
+
 					<ul class="copyright">
 						<li>&copy; Debjit Sarkar. All rights reserved.</li>
 						<li>Design by <a href="#">Debjit Sarkar</a></li>
@@ -332,53 +430,39 @@
 			function autoShowSlides() {
 				let i;
 				let slides = document.getElementsByClassName("mySlides");
+
 				for (i = 0; i < slides.length; i++) {
 					slides[i].style.display = "none";
 				}
+
 				slideIndex++;
-				if (slideIndex > slides.length) {slideIndex = 1}
-				slides[slideIndex-1].style.display = "block";
-				setTimeout(autoShowSlides, 6000); // Change image every 6 seconds
+
+				if (slideIndex > slides.length) {
+					slideIndex = 1;
+				}
+
+				slides[slideIndex - 1].style.display = "block";
+				setTimeout(autoShowSlides, 6000);
 			}
 		</script>
 
-		<!-- Role-list entrance script only (no cycling/highlighter) -->
+		<!-- Role-list entrance script only -->
 		<script>
-			// Wait for full load (images/fonts) to ensure the name/logo have appeared
 			window.addEventListener('load', function () {
-			  // small buffer to ensure any header animations finish
-			  const bufferAfterLoad = 500; // ms
-			  setTimeout(initRoleList, bufferAfterLoad);
+				const bufferAfterLoad = 500;
+				setTimeout(initRoleList, bufferAfterLoad);
 			});
 
 			function initRoleList() {
-			  const items = Array.from(document.querySelectorAll('.banner-desc li'));
-			  if (!items.length) return;
+				const items = Array.from(document.querySelectorAll('.banner-desc li'));
 
-			  // staggered entrance AFTER the header/name has appeared
-			  items.forEach((li, idx) => {
-			    setTimeout(() => li.classList.add('visible'), idx * 180); // 180ms stagger
-			  });
+				if (!items.length) return;
 
-			  // No cycling, no highlighting — the list simply appears and stays static.
+				items.forEach((li, idx) => {
+					setTimeout(() => li.classList.add('visible'), idx * 180);
+				});
 			}
 		</script>
 
 	</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
