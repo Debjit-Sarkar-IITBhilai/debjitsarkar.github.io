@@ -1,3 +1,6 @@
+Full code:
+
+```html
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -34,6 +37,25 @@
 			@keyframes fade {
 				from {opacity: 0.3;}
 				to {opacity: 1;}
+			}
+
+			/* ===== Profile Photo and Flags ===== */
+			.profile-flags-row {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 24px;
+			}
+
+			.flags {
+				display: flex;
+				align-items: center;
+				gap: 12px;
+			}
+
+			.flag {
+				font-size: 42px;
+				line-height: 1;
 			}
 
 			.caption {
@@ -131,6 +153,14 @@
 			}
 
 			@media (max-width: 520px) {
+				.profile-flags-row {
+					gap: 16px;
+				}
+
+				.flag {
+					font-size: 34px;
+				}
+
 				.banner-desc {
 					font-size: 18px;
 				}
@@ -155,8 +185,15 @@
 			<!-- Banner -->
 			<section id="banner">
 				<div class="inner">
-					<div class="logo">
-						<img src="images/logo1.jpg" alt="Logo" style="height: 200px; width: 170px; border-radius: 30px;" />
+					<div class="profile-flags-row">
+						<div class="logo">
+							<img src="images/logo1.jpg" alt="Logo" style="height: 200px; width: 170px; border-radius: 30px;" />
+						</div>
+
+						<div class="flags" aria-label="India and UAE flags">
+							<span class="flag" role="img" aria-label="India flag">🇮🇳</span>
+							<span class="flag" role="img" aria-label="UAE flag">🇦🇪</span>
+						</div>
 					</div>
 
 					<h2 id="main-name">Debjit Sarkar</h2>
@@ -474,3 +511,4 @@
 
 	</body>
 </html>
+```
