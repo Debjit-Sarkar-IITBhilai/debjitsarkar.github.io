@@ -138,6 +138,54 @@
 				.banner-desc li {
 					padding-left: 22px;
 				}
+
+#banner {
+    position: relative;
+}
+
+.banner-flags {
+    position: absolute;
+    top: 70px;
+    right: 80px;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.banner-flags .country {
+    text-align: center;
+}
+
+.banner-flags img {
+    width: 85px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid rgba(255,255,255,.35);
+    box-shadow: 0 6px 15px rgba(0,0,0,.35);
+}
+
+.banner-flags span {
+    display: block;
+    margin-top: 8px;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+@media screen and (max-width:980px){
+
+    .banner-flags{
+        position: static;
+        justify-content:center;
+        margin-top:30px;
+    }
+
+    .banner-flags img{
+        width:70px;
+        height:46px;
+    }	
 			}
 		</style>
 	</head>
@@ -155,21 +203,39 @@
 			<!-- Banner -->
 			<section id="banner">
 				<div class="inner">
-					<div class="logo">
-						<img src="images/logo1.jpg" alt="Logo" style="height: 200px; width: 170px; border-radius: 30px;" />
-					</div>
 
-					<h2 id="main-name">Debjit Sarkar</h2>
+    <div class="banner-flags">
 
-					<ul class="banner-desc" aria-label="Professional roles">
-						<li>Member of IEEE</li>
-						<li>Deputy Manager at TASA Gulf Industry LLC | Dubai | UAE</li>
-						<li>Former Teaching Assistant at IIT Bhilai</li>
-						<li>Former Researcher at ASCII Lab</li>
-						<li>Former Quality Engineer at JCHACIL</li>
-						<li>Former BDA at BYJU'S</li>
-					</ul>
-				</div>
+        <div class="country">
+            <img src="images/india.png" alt="India">
+            <span>INDIA</span>
+        </div>
+
+        <div class="country">
+            <img src="images/uae.png" alt="UAE">
+            <span>UAE</span>
+        </div>
+
+    </div>
+
+    <div class="logo">
+        <img src="images/logo1.jpg"
+             alt="Logo"
+             style="height:200px;width:170px;border-radius:30px;">
+    </div>
+
+    <h2 id="main-name">Debjit Sarkar</h2>
+
+    <ul class="banner-desc" aria-label="Professional roles">
+        <li>Member of IEEE</li>
+        <li>Deputy Manager at TASA Gulf Industry LLC | Dubai | UAE</li>
+        <li>Former Teaching Assistant at IIT Bhilai</li>
+        <li>Former Researcher at ASCII Lab</li>
+        <li>Former Quality Engineer at JCHACIL</li>
+        <li>Former BDA at BYJU'S</li>
+    </ul>
+
+</div>
 			</section>
 
 			<!-- Wrapper -->
