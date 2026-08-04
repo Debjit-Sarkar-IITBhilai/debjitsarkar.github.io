@@ -44,6 +44,13 @@
 				gap: 24px;
 			}
 
+			.profile-photo {
+				height: 200px;
+				width: 170px;
+				border-radius: 30px;
+				display: block;
+			}
+
 			.flags {
 				display: flex;
 				align-items: center;
@@ -51,8 +58,8 @@
 			}
 
 			.flags img {
-				width: 54px;
-				height: auto;
+				height: 200px;
+				width: auto;
 				display: block;
 				border-radius: 4px;
 			}
@@ -153,11 +160,16 @@
 
 			@media (max-width: 520px) {
 				.profile-flags-row {
-					gap: 16px;
+					gap: 12px;
+				}
+
+				.profile-photo {
+					height: 160px;
+					width: 136px;
 				}
 
 				.flags img {
-					width: 44px;
+					height: 160px;
 				}
 
 				.banner-desc {
@@ -186,7 +198,7 @@
 				<div class="inner">
 					<div class="profile-flags-row">
 						<div class="logo">
-							<img src="images/logo1.jpg" alt="Logo" style="height: 200px; width: 170px; border-radius: 30px;" />
+							<img class="profile-photo" src="images/logo1.jpg" alt="Logo" />
 						</div>
 
 						<div class="flags">
