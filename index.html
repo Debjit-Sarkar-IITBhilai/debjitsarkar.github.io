@@ -139,6 +139,48 @@
 					padding-left: 22px;
 				}
 
+				.photo-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:100%;
+    margin-bottom:35px;
+}
+
+.profile-photo{
+    width:170px;
+    height:200px;
+    border-radius:30px;
+}
+
+.flag-group{
+    display:flex;
+    gap:20px;
+}
+
+.flag-group img{
+    width:170px;
+    height:200px;
+    border-radius:30px;
+    object-fit:cover;
+    border:2px solid rgba(255,255,255,.3);
+    box-shadow:0 6px 20px rgba(0,0,0,.35);
+}
+
+@media screen and (max-width:980px){
+
+    .photo-row{
+        flex-direction:column;
+        gap:25px;
+    }
+
+    .flag-group img{
+        width:110px;
+        height:130px;
+    }
+
+}
+
 #banner {
     position: relative;
 }
@@ -218,11 +260,20 @@
 
     </div>
 
+    <div class="photo-row">
+
     <div class="logo">
         <img src="images/logo1.jpg"
-             alt="Logo"
-             style="height:200px;width:170px;border-radius:30px;">
+             alt="Profile"
+             class="profile-photo">
     </div>
+
+    <div class="flag-group">
+        <img src="images/india.png" alt="India">
+        <img src="images/uae.png" alt="UAE">
+    </div>
+
+</div>
 
     <h2 id="main-name">Debjit Sarkar</h2>
 
