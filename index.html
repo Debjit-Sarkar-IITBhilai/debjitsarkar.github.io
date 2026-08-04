@@ -41,7 +41,7 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				gap: 200px;
+				gap: 190px;
 			}
 
 			.profile-photo {
@@ -56,12 +56,22 @@
 				align-items: center;
 				gap: 12px;
 			}
+			#banner .flags {
+	transition: opacity 2s ease, transform 1s ease;
+	transform: translateY(0);
+	opacity: 1;
+}
+
+body.is-preload #banner .flags {
+	transform: translateY(0.5em);
+	opacity: 0;
+}
 
 			.flags img {
-				height: 200px;
+				height: 190px;
 				width: auto;
 				display: block;
-				border-radius: 4px;
+				border-radius: 30px;
 			}
 
 			.caption {
