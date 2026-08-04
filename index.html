@@ -40,13 +40,22 @@
 			.profile-flags-row {
 				display: flex;
 				align-items: center;
-				justify-content: center;
+				justify-content: flex-start;
 				gap: 190px;
+				width: 100%;
+			}
+
+			.profile-flags-row .logo {
+				margin: 0;
+				padding: 0;
+				display: flex;
+				align-items: center;
 			}
 
 			.profile-photo {
 				height: 200px;
 				width: 170px;
+				object-fit: cover;
 				border-radius: 30px;
 				display: block;
 			}
@@ -55,17 +64,20 @@
 				display: flex;
 				align-items: center;
 				gap: 12px;
+				margin: 0;
+				padding: 0;
 			}
-			#banner .flags {
-	transition: opacity 2s ease, transform 1s ease;
-	transform: translateY(0);
-	opacity: 1;
-}
 
-body.is-preload #banner .flags {
-	transform: translateY(0.5em);
-	opacity: 0;
-}
+			#banner .flags {
+				transition: opacity 2s ease, transform 1s ease;
+				transform: translateY(0);
+				opacity: 1;
+			}
+
+			body.is-preload #banner .flags {
+				transform: translateY(0.5em);
+				opacity: 0;
+			}
 
 			.flags img {
 				height: 190px;
@@ -170,6 +182,7 @@ body.is-preload #banner .flags {
 
 			@media (max-width: 520px) {
 				.profile-flags-row {
+					justify-content: center;
 					gap: 12px;
 				}
 
@@ -178,8 +191,12 @@ body.is-preload #banner .flags {
 					width: 136px;
 				}
 
+				.flags {
+					gap: 8px;
+				}
+
 				.flags img {
-					height: 160px;
+					height: 150px;
 				}
 
 				.banner-desc {
